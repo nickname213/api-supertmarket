@@ -5,3 +5,4 @@ pydantic-settings
 email-validator
 httpx
 pymongo
+python-dotenv
