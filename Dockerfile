@@ -6,7 +6,6 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Ahora copiamos el .env y el resto del código
-COPY .env .
 COPY . .
 
 EXPOSE 80
