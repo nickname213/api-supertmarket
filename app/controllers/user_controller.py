@@ -18,6 +18,9 @@ class UserController:
         items = []
         for doc in cursor:
             doc["_id"] = str(doc["_id"])
+            # Pre-process email: convert empty string to None
+            if "email" in doc and doc["email"] == "":
+                doc["email"] = None
             items.append(User(**doc))
         return items
 
@@ -25,6 +28,9 @@ class UserController:
         doc = self.col.find_one({"_id": ObjectId(id)})
         if doc:
             doc["_id"] = str(doc["_id"])
+            # Pre-process email: convert empty string to None
+            if "email" in doc and doc["email"] == "":
+                doc["email"] = None
             return User(**doc)
         return None
 

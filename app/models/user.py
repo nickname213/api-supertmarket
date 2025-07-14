@@ -6,8 +6,8 @@ class User(BaseModel):
     username: str
     password: str
     role: str
-    email: EmailStr
-    simplifiedMode: bool
+    email: EmailStr | None = None
+    simplifiedMode: bool = False
 
     class Config:
         validate_by_name = True
@@ -18,8 +18,8 @@ class UserCreate(BaseModel):
     username: str
     password: str
     role: str
-    email: EmailStr
-    simplifiedMode: bool
+    email: EmailStr | None = None
+    simplifiedMode: bool = False
 
 class UserUpdate(BaseModel):
     username: str | None = None

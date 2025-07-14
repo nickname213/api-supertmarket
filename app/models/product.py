@@ -9,8 +9,8 @@ class Product(BaseModel):
     retailPrice: int
     currentStock: int
     unitType: str
-    wholesalePrice: int
-    wholesaleQuantity: int
+    wholesalePrice: int = 0
+    wholesaleQuantity: int = 0
 
     class Config:
         validate_by_name = True
@@ -24,8 +24,8 @@ class ProductCreate(BaseModel):
     retailPrice: int
     currentStock: int
     unitType: str
-    wholesalePrice: int
-    wholesaleQuantity: int
+    wholesalePrice: int = 0
+    wholesaleQuantity: int = 0
 
 class ProductUpdate(BaseModel):
     name: str | None = None
